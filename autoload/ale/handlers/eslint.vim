@@ -12,6 +12,7 @@ call ale#Set('javascript_eslint_suppress_missing_config', 0)
 function! ale#handlers#eslint#FindConfig(buffer) abort
     for l:path in ale#path#Upwards(expand('#' . a:buffer . ':p:h'))
         for l:basename in [
+        \   'eslint.config.js',
         \   '.eslintrc.js',
         \   '.eslintrc.yaml',
         \   '.eslintrc.yml',
